@@ -55,7 +55,11 @@ void loop() {
 
     if (isAuthorized(serial)) //If serial authorized, write our password
     {
+      Serial.println("Tag authorized");
       writePass(pass);
+    }
+    else {
+      Serial.println("Tag unauthorized");
     }
     nfc.haltTag(); //Stop the tag and get ready for reading a new tag
     delay(2000);
